@@ -7,7 +7,7 @@ python3
 1)git clone https://github.com/georgelyjo/uploadme</br>
 2)run python3 install.py
 # Usage
-python3 uploadme.py --file <filename> --expiry <expiry_in_weeks> </br>
+python3 uploadme.py --file  <file_name> --expiry <expiry_in_weeks> </br>
 scan the QR code using smartphone and download the transfered file</br>
 Support for windows and Linux operating system.</br>
 The QR code can be scanned to download files and link can also be shared with your friends.Link is produced in the commmand line as soon as the file is uploaded in the server.</br>
