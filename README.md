@@ -5,7 +5,7 @@ pip3<br/>
 python3
 # Installation
 1)git clone https://github.com/georgelyjo/uploadme</br>
-2)run python3 install.py
+2)run python3 install.py</br>
 In linux you can use terminal and windows I recommend using powershell.You can open powershell shell windows in any file or directory by Ctrl+Shift+F10 </br> 
 # Usage
 python3 uploadme.py --file  <file_name> --expiry <expiry_in_weeks> </br>
