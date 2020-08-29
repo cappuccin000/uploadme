@@ -21,7 +21,7 @@ def main(argv):
       if opt == '-h':
          print("usage: python uploadme.py --f <inputfile> --e <expiry>")
          print(" --f(--file)\tfile to be uploaded")
-         print(" --e(--expiry)\texpiry to be specified in weeks")
+         print(" --e(--expiry)\texpiry to be specified in days")
          sys.exit()
       elif opt in ("-f", "--file"):
          inputfile = arg
