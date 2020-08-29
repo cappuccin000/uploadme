@@ -34,13 +34,14 @@ def main(argv):
     if(os in "win32" or os in "win64"):
      import os
      myCmd = os.popen(cmd).read()
-     print(myCmd);
+     print(myCmd)
      url = pyqrcode.create(myCmd)
      url.png('my.png', scale = 6)
      os.system('.\my.png')
     else:
      import os
      myCmd = os.popen(cmd).read()
+     print(myCmd)
      url = pyqrcode.create(myCmd)
      url.png('my.png', scale = 6)
      os.system('eog my.png')
