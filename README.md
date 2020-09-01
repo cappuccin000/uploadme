@@ -14,7 +14,7 @@ python uploadme.py --file  <file_name> --expiry <expiry_in_days> </br>
 For Linux</br>
 uploadme --file  <file_name> --expiry <expiry_in_days> </br>
 # GUI
-Linux - uploadme.py</br>
+Linux - uploadme (type in bash)</br>
 Windows - run uploadme.ps1 to do that you can right click and select run with powershell.You can also create a shorcut to access it easily follow this tutorial
 https://www.tenforums.com/tutorials/97162-powershell-scripting-run-script-shortcut.html</br>
 # Features
