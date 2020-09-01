@@ -1,5 +1,5 @@
 # uploadme
-A simple python script to transfer file from command line to smartphone ,tablets and other devices without opening browser.
+A simple python script to transfer file from command line or using GUI to smartphone ,tablets and other devices without opening browser.
 # Requirments
 pip3<br/>
 python3
