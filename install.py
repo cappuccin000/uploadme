@@ -3,6 +3,7 @@ import sys
 import os
 operating = sys.platform
 if(operating  in "win32" or operating in "win64"):
+ os.system('pip3 install tkintertable')
  os.system('pip3 install pyqrcode')
  os.system('pip3 install pypng')
 else:
@@ -15,6 +16,7 @@ else:
  command = "sudo ln -s " + cmd + " /usr/bin/uploadme"
  os.system(command)
  myCmd = os.popen('sed -i -e "s/\r$//" uploadme.py').read()
+ os.system('pip3 install tkintertable')
  os.system('pip3 install pyqrcode')
  os.system('pip3 install pypng')
  os.system('sudo apt-get install eog')
