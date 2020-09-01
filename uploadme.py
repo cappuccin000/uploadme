@@ -11,7 +11,7 @@ import png
 from pyqrcode import QRCode 
 def main(argv):
    inputfile = ''
-   outputfile = '1'
+   outputfile = '0'
    try:
       opts, args = getopt.getopt(argv,"hf:e:",["file=","expiry="])
    except getopt.GetoptError:
@@ -31,7 +31,19 @@ def main(argv):
          inputfile = arg
       elif opt in ("-e", "--expiry"):
          outputfile = arg
-   cmd = "curl  -H" + ' "' + "Max-Days:"+ outputfile +'"' + " --upload-file ./" + inputfile + " https://transfer.sh/" + inputfile
+   no = len(sys.argv)
+   if(no == 3 or no == 5):
+    print("server's to upload the file *use other server if the selected one did not work* ")   
+    print("1)transfer.sh  limit 10GB and expiry also available")
+    print("2)file.io      limit 100MB and no expiry available")
+    opt=input("enter the option number")
+    if(opt == '1'):
+     if(outputfile == '0'):
+      outputfile=input("enter the expiry");
+     cmd = "curl  -H" + ' "' + "Max-Days:"+ outputfile +'"' + " --upload-file ./" + inputfile + " https://transfer.sh/" + inputfile
+    else:
+     outputfile ='1'
+     cmd = "curl -F " + '"' + "file="  + "@" + inputfile + '"' + "  https://file.io/?expires=" + outputfile + "w"
    num = len(sys.argv)
    if(num == 3 or num == 5):
     print("Note:Using Command line mode you can launch GUI by simply typing python uploadme.py") 
@@ -40,6 +52,8 @@ def main(argv):
      import os
      print(cmd)
      myCmd = os.popen(cmd).read()
+     if(len(myCmd) > 30):
+      myCmd = myCmd[45:73]      
      print(myCmd);
      url = pyqrcode.create(myCmd)
      url.png('my.png', scale = 6)
