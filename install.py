@@ -13,8 +13,8 @@ else:
  cmd = myCmd.rstrip("\n")
  cmd = cmd + inputfile
  command = "sudo ln -s " + cmd + " /usr/bin/uploadme"
- print(command)
  os.system(command)
+ myCmd = os.popen('sed -i -e "s/\r$//" uploadme.py').read()
  os.system('pip3 install pyqrcode')
  os.system('pip3 install pypng')
  os.system('sudo apt-get install eog')
