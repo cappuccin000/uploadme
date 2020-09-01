@@ -17,6 +17,7 @@ else:
  os.system(command)
  myCmd = os.popen('sed -i -e "s/\r$//" uploadme.py').read()
  os.system('sudo apt-get install python3-tk')
+ os.system('sudo apt-get install python-tk')
  os.system('pip3 install pyqrcode')
  os.system('pip3 install pypng')
  os.system('sudo apt-get install eog')
