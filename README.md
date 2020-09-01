@@ -14,9 +14,9 @@ python uploadme.py --file  <file_name> --expiry <expiry_in_days> </br>
 For Linux</br>
 uploadme --file  <file_name> --expiry <expiry_in_days> </br>
 # GUI
-Linux - uploadme.py
+Linux - uploadme.py</br>
 Windows - run uploadme.ps1 to do that you can right click and select run with powershell.You can also create a shorcut to access it easily follow this tutorial
-https://www.tenforums.com/tutorials/97162-powershell-scripting-run-script-shortcut.html
+https://www.tenforums.com/tutorials/97162-powershell-scripting-run-script-shortcut.html</br>
 # Features
 scan the QR code using smartphone and download the transfered file</br>
 Support for windows and Linux operating system.</br>
