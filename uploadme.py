@@ -23,6 +23,7 @@ def main(argv):
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
+         print("python uploadme.py (To launch GUI mode)")
          print("usage: python uploadme.py --f <inputfile> --e <expiry>")
          print(" --f(--file)\tfile to be uploaded")
          print(" --e(--expiry)\texpiry to be specified in weeks")
