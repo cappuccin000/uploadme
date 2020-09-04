@@ -56,7 +56,7 @@ def main(argv):
      import os
      print(cmd)
      myCmd = os.popen(cmd).read()
-     if(len(myCmd) > 30):
+     if(len(myCmd) < 30):
       myCmd = myCmd[45:73]      
      print(myCmd);
      url = pyqrcode.create(myCmd)
