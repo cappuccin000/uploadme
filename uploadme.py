@@ -35,15 +35,18 @@ def main(argv):
    if(no == 3 or no == 5):
     print("server's to upload the file *use other server if the selected one did not work* ")   
     print("1)transfer.sh  limit 10GB and expiry also available")
-    print("2)file.io      limit 100MB and no expiry available")
+    print("2)0x0.st     limit 512MB and expires in 30 day")
+    print("3)file.io   limit 200MB - only one download")
     opt=input("enter the option number")
     if(opt == '1'):
      if(outputfile == '0'):
       outputfile=input("enter the expiry");
-     cmd = "curl  -H" + ' "' + "Max-Days:"+ outputfile +'"' + " --upload-file ./" + inputfile + " https://transfer.sh/" + inputfile
-    else:
-     outputfile ='1'
-     cmd = "curl -F " + '"' + "file="  + "@" + inputfile + '"' + "  https://file.io/?expires=" + outputfile + "w"
+      cmd = "curl  -H" + ' "' + "Max-Days:"+ outputfile +'"' + " --upload-file ./" + inputfile + " https://transfer.sh/" + inputfile
+    if(opt == '2'):
+     cmd = "curl -F " + '"' + "file="  + "@" + inputfile + '"' + " https://0x0.st"
+    if(opt == '3'):
+     outputfile = '1'
+     cmd = "curl -F " + '"' + "file="  + "@" + inputfile + '"' + " https://file.io/?expires=" + outputfile + "w"
    num = len(sys.argv)
    if(num == 3 or num == 5):
     print("Note:Using Command line mode you can launch GUI by simply typing python uploadme.py") 
