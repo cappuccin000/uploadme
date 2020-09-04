@@ -23,7 +23,6 @@ def main(argv):
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print("python uploadme.py (To launch GUI mode)")
          print("usage: python uploadme.py --f <inputfile> --e <expiry>")
          print(" --f(--file)\tfile to be uploaded")
          print(" --e(--expiry)\texpiry to be specified in weeks")
@@ -34,7 +33,7 @@ def main(argv):
          outputfile = arg
    no = len(sys.argv)
    if(no == 3 or no == 5):
-    print("server's to upload the file *use other server if the selected one did not work* ")   
+    print("server's to upload the file *use other servers if the selected one did not work* ")   
     print("1)transfer.sh  limit 10GB and expiry also available")
     print("2)0x0.st     limit 512MB and expires in 30 day")
     print("3)file.io   limit 200MB - only one download")
@@ -57,8 +56,12 @@ def main(argv):
      print(cmd)
      myCmd = os.popen(cmd).read()
      if(len(myCmd) < 30):
-      myCmd = myCmd[45:73]      
-     print(myCmd);
+      myCmd = myCmd[45:73] 
+     if ('file' in myCmd or 'transfer' in myCmd or '0x0' in myCmd):
+      print("creating QR code")
+     else:
+      print("****Please enter a valid file****")
+      exit()     
      url = pyqrcode.create(myCmd)
      url.png('my.png', scale = 6)
      os.system('.\my.png')
@@ -71,11 +74,17 @@ def main(argv):
    else:
     print("LAUNCHING GUI MODE ......")
     root = Tk()
+    root.withdraw()
     root.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
     win = root.filename
     command = "curl -F " + '"' + "file="  + "@" + win + '"' + "  https://file.io/?expires=" + outputfile + "w"
     import os
     res = os.popen(command).read()
+    if('file.io' in res):
+      print("creating QR code")
+    else:
+      print("****Please enter a valid file****")
+      exit()     
     print(res[45:73])
     url = pyqrcode.create(res[45:73])
     url.png('my.png', scale = 6)
